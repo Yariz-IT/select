@@ -1,0 +1,175 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 30px;
+	font-family: sans-serif;
+	line-height: 1.5;
+	text-align: center;
+}
+
+.form-group-title {
+	font-style: 22px;
+	font-weight: 700;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.form-group + .form-group {
+	margin-top: 10px;
+}
+
+label {
+	cursor: pointer;
+}
+
+.select {
+
+	/* Убираем браузерную стрелку */
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+
+	/* Задаем свой фон и рамку */
+	border: 1px solid #7E9BBD;
+	border-radius: 6px;
+	background-color: #fff;
+
+	/* Отступы от рамки к тексту */
+	padding: 10px 35px 10px 15px;
+
+	/* Убираем баузерную обводку*/
+	outline: none;
+	cursor: pointer;
+}
+
+/* Убираем стрелочку в IE 10 и 11 */
+.select::-ms-expand {
+	display: none;
+}
+
+/* По клику - убираем обводку и добавляем свою*/
+.select:focus {
+	outline: none;
+	box-shadow: 0px 0px 0px 1px #38577a, 0px 0px 10px #7e9bbd;
+}
+
+/* Делаем .select-wrapper родительским элементом для позиционирования "стрелочки" */
+.select-wrapper {
+	position: relative;
+}
+
+/* Рисуем стрелочку */
+.select-wrapper::after{
+	content: "";
+	top: 15px;
+	position: absolute;
+	transform: translateX(-250%);
+
+	/* Рисуем треугольник */
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10.4px 6px 0 6px;
+	border-color: #7e9bbd transparent;
+
+	/* Снимаем клик с треугольника */
+	pointer-events: none;
+}
+
+.dropdown {
+	position: relative;
+}
+
+.dropdown__button {
+	position: relative;
+	text-align: left;
+	background: #FFFFFF;
+	border: 1px solid #7E9BBD;
+	border-radius: 6px;
+	height: 46px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	padding-left: 20px;
+	padding-right: 35px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+.dropdown__button:focus, .dropdown__button--active {
+	outline: none;
+	box-shadow: 0px 0px 0px 4px rgba(176, 198, 225, 0.6);
+}
+
+.dropdown__button::after {
+	content: "";
+	position: absolute;
+	content: "";
+	top: 18px;
+	transform: translateX(80%);
+
+	/* Рисуем треугольник */
+    width: 0;
+    height: 0;
+    border-width: 10.4px 6px 0 6px;
+    border-color: #79849B transparent transparent transparent;
+	border-style: solid;
+
+	/* Снимаем клик с треугольника */
+	pointer-events: none;
+}
+
+
+.dropdown__list {
+	display: none;
+	left: 0px;
+	top: 52px;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 8px rgba(176, 198, 225, 0.6);
+	overflow: hidden;
+	border-radius: 6px;
+	z-index: 1;
+	width: 100%;
+}
+
+.dropdown__list--visible {
+	display: block;
+	position: absolute;
+
+
+}
+
+.dropdown__list-item {
+	margin: 0;
+	padding: 0;
+	border: 1px solid #7E9BBD;
+	border-bottom: 0px;
+	padding: 13px 20px;
+	cursor: pointer;
+	
+	
+}
+
+.dropdown__list-item:first-child {
+	border-radius: 6px 6px 0 0;
+}
+
+.dropdown__list-item:last-child {
+	border-radius: 0 0 6px 6px;
+	border-bottom: 1px solid #7E9BBD;
+}
+
+.dropdown__list-item:hover {
+	background: rgba(176, 198, 225, 0.26);
+}
+
+.dropdown__input-hidden {
+	display: none;
+}
